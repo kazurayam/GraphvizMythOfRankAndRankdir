@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="issues.Issue216Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-21T03:25:00" hostname="KAZUAKInoMacBook-Air-2.local" time="14.891">
+<testsuite name="issues.Issue216Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-21T10:39:30" hostname="KAZUAKInoMacBook-Air-2.local" time="5.704">
   <properties/>
-  <testcase name="test_generatePNG()" classname="issues.Issue216Test" time="14.891"/>
+  <testcase name="test_generatePNG()" classname="issues.Issue216Test" time="5.704"/>
   <system-out><![CDATA[Warning: flat edge between adjacent nodes one of which has a record shape - replace records with HTML-like labels
   Edge A1 -> A2
 Error: lost A1 A2 edge

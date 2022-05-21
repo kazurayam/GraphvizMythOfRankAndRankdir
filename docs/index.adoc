@@ -2,15 +2,15 @@
 
 = オブジェクトのデータ構造を示す図をGraphvizで描こうとしたがrankとrankdirがわからず試行錯誤した話
 
-
-
 link:https://github.com/kazurayam/GraphvizMythOfRankAndRankdir[back to the project repository]
 
 == 解決すべき問題
 
-Javaオブジェクトの実行時のデータ構造をGraphvizで可視化したいと思った。Javaオブジェクトを入力として与えればDOT言語のスクリプトを出力するヘルパクラス `DotGenerator` を生成したいと思った。Javaアプリを実行時にオブジェクトのデータ構造を反映した`.dot`ファイルをして、それをGraphvizツールに渡しPNG画像を生成したい。
+Javaオブジェクトをの内部のデータ構造を表現する画像を生成したいと思った。
 
-たとえばこんなJavaクラスとJUnitテストを題材にしよう。
+たとえばこういう画像を生成したい。
+
+image::diagram043.png[]
 
 include::modules/sec001.adoc[]
 include::modules/sec002.adoc[]
