@@ -1,0 +1,6 @@
+== 021
+[source,dot]
+----
+include::../../src/test/dot/issue261/diagram021.dot[]
+----
+image::../images/diagram021.png[]

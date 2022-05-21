@@ -1,6 +1,0 @@
-== 024
-[source,dot]
-----
-include::../src/test/dot/issue261/diagram043.dot[]
-----
-image::./images/diagram043.png[]
