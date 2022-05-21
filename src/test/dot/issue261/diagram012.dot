@@ -1,0 +1,8 @@
+digraph G {
+    graph [
+        label="diagram012",
+        rankdir=TB
+    ];
+    A1 -> A2;
+    B1 -> B2;
+}

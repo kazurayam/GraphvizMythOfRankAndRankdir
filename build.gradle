@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'com.kazurayam'
+version '0.1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // Subprocessj is used to run "dot" of Graphviz
+    // https://mvnrepository.com/artifact/com.kazurayam/subprocessj
+    testImplementation group: 'com.kazurayam', name: 'subprocessj', version: '0.3.4'
+
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    testImplementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}

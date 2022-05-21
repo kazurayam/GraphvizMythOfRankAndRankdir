@@ -1,0 +1,27 @@
+= オブジェクトのデータ構造を示す図をGraphvizで描こうとしたがrankとrankdirがわからず試行錯誤した話
+
+== 解決すべき問題
+
+Javaオブジェクトの実行時のデータ構造をGraphvizで可視化したいと思った。Javaオブジェクトを入力として与えればDOT言語のスクリプトを出力するヘルパクラス `DotGenerator` を生成したいと思った。Javaアプリを実行時にオブジェクトのデータ構造を反映した`.dot`ファイルをして、それをGraphvizツールに渡しPNG画像を生成したい。
+
+たとえばこんなJavaクラスとJUnitテストを題材にしよう。
+
+include::sec001.adoc[]
+include::sec002.adoc[]
+include::sec003.adoc[]
+include::sec012.adoc[]
+include::sec013.adoc[]
+include::sec020.adoc[]
+include::sec021.adoc[]
+include::sec022.adoc[]
+include::sec023.adoc[]
+include::sec024.adoc[]
+include::sec030.adoc[]
+include::sec031.adoc[]
+include::sec032.adoc[]
+include::sec033.adoc[]
+include::sec034.adoc[]
+include::sec041.adoc[]
+include::sec042.adoc[]
+include::sec043.adoc[]
+
