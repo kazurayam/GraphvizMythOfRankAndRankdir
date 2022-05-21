@@ -1,4 +1,10 @@
+:imagesdir: ./images
+
 = オブジェクトのデータ構造を示す図をGraphvizで描こうとしたがrankとrankdirがわからず試行錯誤した話
+
+
+
+link:https://github.com/kazurayam/GraphvizMythOfRankAndRankdir[back to the project repository]
 
 == 解決すべき問題
 
@@ -6,22 +12,22 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
 
 たとえばこんなJavaクラスとJUnitテストを題材にしよう。
 
-include::section/sec001.adoc[]
-include::section/sec002.adoc[]
-include::section/sec003.adoc[]
-include::section/sec012.adoc[]
-include::section/sec013.adoc[]
-include::section/sec020.adoc[]
-include::section/sec021.adoc[]
-include::section/sec022.adoc[]
-include::section/sec023.adoc[]
-include::section/sec024.adoc[]
-include::section/sec030.adoc[]
-include::section/sec031.adoc[]
-include::section/sec032.adoc[]
-include::section/sec033.adoc[]
-include::section/sec034.adoc[]
-include::section/sec041.adoc[]
-include::section/sec042.adoc[]
-include::section/sec043.adoc[]
+include::modules/sec001.adoc[]
+include::modules/sec002.adoc[]
+include::modules/sec003.adoc[]
+include::modules/sec012.adoc[]
+include::modules/sec013.adoc[]
+include::modules/sec020.adoc[]
+include::modules/sec021.adoc[]
+include::modules/sec022.adoc[]
+include::modules/sec023.adoc[]
+include::modules/sec024.adoc[]
+include::modules/sec030.adoc[]
+include::modules/sec031.adoc[]
+include::modules/sec032.adoc[]
+include::modules/sec033.adoc[]
+include::modules/sec034.adoc[]
+include::modules/sec041.adoc[]
+include::modules/sec042.adoc[]
+include::modules/sec043.adoc[]
 

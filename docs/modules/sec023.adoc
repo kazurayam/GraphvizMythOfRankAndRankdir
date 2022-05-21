@@ -1,6 +1,8 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
 == 023
 [source,dot]
 ----
 include::../../src/test/dot/issue261/diagram023.dot[]
 ----
-image::../images/diagram023.png[]
+image::diagram023.png[]
