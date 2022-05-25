@@ -1,3 +1,5 @@
+// https://stackoverflow.com/questions/11588667/how-to-influence-layout-of-graph-items
+
 digraph JobStateDiagram {
   rankdir=LR;
   size="8,5";

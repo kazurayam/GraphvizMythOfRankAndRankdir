@@ -1,69 +1,44 @@
-digraph G {
-    graph [
-        rankdir=TB,
-        label="diagram43"
-    ];
-    node [
-        shape=plaintext
-    ]
-    subgraph cluster_Group {
-      graph [
-        label="Group",
-        color="red"
-      ]
-      //
-      subgraph cluster_A {
-        graph [
-          label="A",
-          color="blue"
-        ];
-        A1 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"><TR>
-              <TD PORT="f0">a1</TD><TD PORT="f1">A1</TD>
-            </TR></TABLE>>];
-        A0 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="gray50"><TR>
-              <TD PORT="f0"><FONT color="white">a0</FONT></TD><TD PORT="f1"><FONT color="white">A0</FONT></TD>
-            </TR></TABLE>>];
-        A2 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"><TR>
-              <TD PORT="f0">a2</TD><TD PORT="f1">A2</TD>
-            </TR></TABLE>>];
-        A1:f1 -> A0:f0 [arrowhead=none];
-        A0:f1 -> A2:f0 [arrowhead=none];
-        {rankdir=LR; rank=same; A1, A0, A2;}
-      }
-      //
-      subgraph cluster_B {
-        graph [
-          label="B",
-          color="blue"
-        ];
-        B1 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"><TR>
-              <TD PORT="f0">b1</TD><TD PORT="f1">B1</TD>
-            </TR></TABLE>>];
-        B2 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"><TR>
-              <TD PORT="f0">b2</TD><TD PORT="f1">B2</TD>
-            </TR></TABLE>>];
-        B1:f1 -> B2:f0 [arrowhead=none];
-        {rankdir=LR; rank=same; B1, B2;}
-      }
-      //
-      subgraph cluster_C {
-        graph [
-          label="C",
-          color="blue"
-        ];
-        C1 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"><TR>
-              <TD PORT="f0">c1</TD><TD PORT="f1">C1</TD>
-            </TR></TABLE>>];
-        C2 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"><TR>
-              <TD PORT="f0">c2</TD><TD PORT="f1">C2</TD>
-            </TR></TABLE>>];
-        C1:f1 -> C2:f0 [arrowhead=none];
-        {rankdir=LR; rank=same; C1, C2;}
-      }
-      //
-      A1:f1 -> B1:f1 [style="invis"];
-      B1:f1 -> C1:f1 [style="invis"];
-      A2:f0 -> B2:f0 [style="invis"];
-      B2:f0 -> C2:f0 [style="invis"];
-    }
+// https://stackoverflow.com/questions/11588667/how-to-influence-layout-of-graph-items
+
+digraph JobStateDiagram {
+  rankdir=LR;
+  size="8,5";
+  node  [style="rounded,filled,bold", shape=box, fixedsize=true, width=1.3, fontname="Arial"];
+  
+  Created   [fillcolor=black, shape=circle, label="", width=0.25];
+  Destroyed [fillcolor=black, shape=doublecircle, label="", width=0.3];
+  Empty     [fillcolor="#a0ffa0"];
+  Announced [fillcolor="#a0ffa0"];
+  Assigned  [fillcolor="#a0ffa0"];
+  Working   [fillcolor="#a0ffa0"];
+  Ready     [fillcolor="#a0ffa0"];
+  TimedOut  [fillcolor="#ffa0a0"];
+  Failed    [fillcolor="#ffa0a0"];
+  { rank=source; Created Destroyed; }
+  { rank=same; Announced; Failed; }
+  { rank=same; Assigned; TimedOut; }
+
+  edge  [style=bold, fontname="Arial" weight=100];
+  Empty     -> Announced [ label="announce"   ];
+  Announced -> Assigned  [ label="assign"     ];
+  Assigned  -> Working   [ label="start"      ];
+  Working   -> Ready     [ label="finish"     ];
+  Ready     -> Empty     [ label="revoke", weight=1];
+  
+  edge  [color="#aaaaaa" weight=1]
+  Announced -> TimedOut  [ label="timeout"    ];
+  Assigned  -> TimedOut  [ label="timeout"    ];
+  Working   -> TimedOut  [ label="timeout"    ];
+  Working   -> Failed    [ label="error"      ];
+  TimedOut  -> Announced [ label="announce"   ];
+  TimedOut  -> Empty     [ label="revoke"     ];
+  Failed    -> Announced [ label="announce"   ];
+  Failed    -> Empty     [ label="revoke"     ];
+  
+  Created   -> Empty     [ label="initialize" ];
+  Empty     -> Destroyed [ label="finalize"   ];
+  Announced -> Empty     [ label="revoke"     ];
+  Assigned  -> Empty     [ label="revoke"     ];
+  Working   -> Empty     [ label="revoke"     ];
+
 }
