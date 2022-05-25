@@ -1,0 +1,11 @@
+digraph G {
+  rankdir=LR;
+  A;
+  B;
+  C;
+  D;
+  edge [weight=100];
+  A -> B -> C;
+  B -> D [weight=1];
+  { rank=same; B, D; }
+}

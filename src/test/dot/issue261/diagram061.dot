@@ -1,6 +1,5 @@
 digraph G {
     graph [
-        rankdir=TB,
         label="diagram43"
     ];
     node [
@@ -8,27 +7,37 @@ digraph G {
     ]
     subgraph cluster_Group {
       graph [
+        rankdir=TB,
         label="Group",
         color="red"
       ]
       //
       subgraph cluster_A {
         graph [
+          rankdir=LR,
           label="A",
           color="blue"
         ];
-        A1 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"><TR>
+        START;
+        A1 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#a0ffa0"><TR>
               <TD PORT="f0">a1</TD><TD PORT="f1">A1</TD>
             </TR></TABLE>>];
         A0 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="gray50"><TR>
               <TD PORT="f0"><FONT color="white">a0</FONT></TD><TD PORT="f1"><FONT color="white">A0</FONT></TD>
             </TR></TABLE>>];
-        A2 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"><TR>
+        A2 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#a0ffa0"><TR>
               <TD PORT="f0">a2</TD><TD PORT="f1">A2</TD>
             </TR></TABLE>>];
+        A3 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffa0a0"><TR>
+              <TD PORT="f0">a3</TD><TD PORT="f1">A3</TD>
+            </TR></TABLE>>];
+        END;
+        edge [weight=10]
         A1:f1 -> A0:f0 [arrowhead=none];
         A0:f1 -> A2:f0 [arrowhead=none];
-        {rankdir=LR; rank=same; A1, A0, A2;}
+        A0:f0 -> A3:f0 [arrowhead=none, weight=1];
+        //A1:f0 -> A3:f0 [style=invis];
+        {rank=same; A1, A0, A2}
       }
       //
       subgraph cluster_B {
