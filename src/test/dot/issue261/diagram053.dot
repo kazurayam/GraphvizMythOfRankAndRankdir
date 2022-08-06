@@ -19,5 +19,7 @@ digraph G {
     { rank=same; S, T, U; }
   }
   edge [color="#a0a0a0", arrowhead=none]
+  START -> B;
+  V -> END;
   D -> T;
 }

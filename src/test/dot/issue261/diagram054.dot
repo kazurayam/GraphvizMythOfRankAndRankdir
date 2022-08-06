@@ -1,0 +1,29 @@
+digraph G {
+  graph [rankdir=TB];
+  subgraph cluster_MP {
+    subgraph cluster_Gx {
+      graph [style="dashed"];
+      A;
+      B;
+      C;
+      D;
+      A -> B -> C;
+      B -> D;
+      { rank=same; A, B, C; }
+    }
+    subgraph cluster_Gy {
+      graph [style="dashed"]
+      S;
+      T;
+      U;
+      V;
+      S -> T -> U;
+      T -> V;
+      { rank=same; S, T, U; }
+    }
+    edge [color="#a0a0a0", arrowhead=none]
+    START -> B;
+    V -> END;
+    D -> T;
+  }
+}

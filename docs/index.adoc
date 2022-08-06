@@ -6,11 +6,11 @@ link:https://github.com/kazurayam/GraphvizMythOfRankAndRankdir[back to the proje
 
 == 解決すべき問題
 
-Javaオブジェクトをの内部のデータ構造を表現する画像を生成したいと思った。
-
-たとえばこういう画像を生成したい。
+Javaオブジェクトをの内部のデータ構造を表現する画像を生成したいと思った。Graphvizを使いたかった（昔、勉強して、ある程度わかっていたから）。たとえばこういう画像を生成したかった。
 
 image::diagram043.png[]
+
+手探り（というよりCopy&Page Programming）したが最初予想したよりずっと難しかった。試行錯誤のあれこれを下記に示す。
 
 include::modules/sec001.adoc[]
 include::modules/sec002.adoc[]
