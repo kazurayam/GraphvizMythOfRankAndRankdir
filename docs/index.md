@@ -1,31 +1,14 @@
--   [オブジェクトのデータ構造を示す図をGraphvizで描こうとしたがrankとrankdirがわからず試行錯誤した話](#オブジェクトのデータ構造を示す図をgraphvizで描こうとしたがrankとrankdirがわからず試行錯誤した話)
-    -   [解決すべき問題](#解決すべき問題)
-    -   [001](#001)
-    -   [002](#002)
-    -   [003](#003)
-    -   [012](#012)
-    -   [013](#013)
-    -   [020](#020)
-    -   [021](#021)
-    -   [022](#022)
-    -   [023](#023)
-    -   [024](#024)
-    -   [030](#030)
-    -   [031](#031)
-    -   [032](#032)
-    -   [033](#033)
-    -   [034](#034)
-    -   [041](#041)
-    -   [024](#024-2)
-    -   [024](#024-3)
-
 # オブジェクトのデータ構造を示す図をGraphvizで描こうとしたがrankとrankdirがわからず試行錯誤した話
+
+[back to the project repository](https://github.com/kazurayam/GraphvizMythOfRankAndRankdir)
 
 ## 解決すべき問題
 
-Javaオブジェクトの実行時のデータ構造をGraphvizで可視化したいと思った。Javaオブジェクトを入力として与えればDOT言語のスクリプトを出力するヘルパクラス `DotGenerator` を生成したいと思った。Javaアプリを実行時にオブジェクトのデータ構造を反映した\`.dot\`ファイルをして、それをGraphvizツールに渡しPNG画像を生成したい。
+Javaオブジェクトをの内部のデータ構造を表現する画像を生成したいと思った。
 
-たとえばこんなJavaクラスとJUnitテストを題材にしよう。
+たとえばこういう画像を生成したい。
+
+![diagram043](./images/diagram043.png)
 
 ## 001
 
@@ -34,7 +17,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         A1 -> A2;
     }
 
-![diagram001](../images/diagram001.png)
+![diagram001](./images/diagram001.png)
 
 ## 002
 
@@ -46,7 +29,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         A1 -> A2;
     }
 
-![diagram002](../images/diagram002.png)
+![diagram002](./images/diagram002.png)
 
 ## 003
 
@@ -58,7 +41,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         A1 -> A2;
     }
 
-![diagram003](../images/diagram003.png)
+![diagram003](./images/diagram003.png)
 
 ## 012
 
@@ -71,20 +54,20 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         B1 -> B2;
     }
 
-![diagram012](../images/diagram012.png)
+![diagram012](./images/diagram012.png)
 
 ## 013
 
     digraph G {
         graph [
-            label="diagram01",
+            label="diagram013",
             rankdir=LR
         ];
         A1 -> A2;
         B1 -> B2;
     }
 
-![diagram013](../images/diagram013.png)
+![diagram013](./images/diagram013.png)
 
 ## 020
 
@@ -97,7 +80,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         A2 -> B2; B2 -> C2;
     }
 
-![diagram020](../images/diagram020.png)
+![diagram020](./images/diagram020.png)
 
 ## 021
 
@@ -111,7 +94,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         A1 -> A2;
     }
 
-![diagram021](../images/diagram021.png)
+![diagram021](./images/diagram021.png)
 
 ## 022
 
@@ -126,7 +109,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         {rankdir=LR; rank=same; A1, A2;}
     }
 
-![diagram022](../images/diagram022.png)
+![diagram022](./images/diagram022.png)
 
 ## 023
 
@@ -143,7 +126,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         {rankdir=LR; rank=same; A1, A2;}   
     }
 
-![diagram023](../images/diagram023.png)
+![diagram023](./images/diagram023.png)
 
 ## 024
 
@@ -162,7 +145,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         {rankdir=LR; rank=same; C1, C2;}
     }
 
-![diagram024](../images/diagram024.png)
+![diagram024](./images/diagram024.png)
 
 ## 030
 
@@ -184,7 +167,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         {rankdir=LR; rank=same; C1, C2;}
     }
 
-![diagram030](../images/diagram030.png)
+![diagram030](./images/diagram030.png)
 
 ## 031
 
@@ -210,7 +193,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         {rankdir=LR; rank=same; C1, C2;}
     }
 
-![diagram031](../images/diagram031.png)
+![diagram031](./images/diagram031.png)
 
 ## 032
 
@@ -236,7 +219,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         {rankdir=LR; rank=same; C1, C2;}
     }
 
-![diagram032](../images/diagram032.png)
+![diagram032](./images/diagram032.png)
 
 ## 033
 
@@ -266,7 +249,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         {rankdir=LR; rank=same; C1, C2;}
     }
 
-![diagram033](../images/diagram033.png)
+![diagram033](./images/diagram033.png)
 
 ## 034
 
@@ -310,7 +293,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         {rankdir=LR; rank=same; C1, C2;}
     }
 
-![diagram034](../images/diagram034.png)
+![diagram034](./images/diagram034.png)
 
 ## 041
 
@@ -368,7 +351,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         B2:f0 -> C2:f0;
     }
 
-![diagram041](../images/diagram041.png)
+![diagram041](./images/diagram041.png)
 
 ## 024
 
@@ -438,7 +421,7 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         }
     }
 
-![diagram042](../images/diagram042.png)
+![diagram042](./images/diagram042.png)
 
 ## 024
 
@@ -508,4 +491,4 @@ Javaオブジェクトの実行時のデータ構造をGraphvizで可視化し�
         }
     }
 
-![diagram043](../images/diagram043.png)
+![diagram043](./images/diagram043.png)
